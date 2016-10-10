@@ -8,7 +8,9 @@
     --text-bright-color: #fff;
     --icon-color: #fff;
     --icon-bk-color: #ddd;
+    --gray-color: #ddd;
     --large-width: 1000px;
+    --middle-width: 800px;
 }
 
 /* 基本設定：　ページ全体 */
@@ -17,6 +19,27 @@ body {
                 'Hiragino Kaku Gothic Pro',
                 sans-serif;
 }
+
+/* 基本設定: フォントサイズ */
+@media (max-width: 599px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    :root {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 800px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+body {font-size: 16px;}
 
 /* コンテンツA：　ヒーローイメージ */
 .conA {
@@ -439,6 +462,12 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.nohero header {
+    position: static;
+    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px var(--gray-color);
+}
+
 /* ヘッダーA: サイト名 */
 .headA {
     display: inline-block;
@@ -526,5 +555,93 @@ header {
     
     .headB {
         display: block !important;
+    }
+}
+
+.post .container {
+    max-width: 800px;
+    max-width: var(--middle-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 10px;
+}
+
+.post h1 {
+    padding-left: 0.5rem;
+    border-left: solid 0.75rem #BF6A7A;
+    border-left: solid 0.75rem var(--accent-color);
+    fotn-size: 2rem;
+}
+
+.post p {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.post img {
+    max-width: 100%;
+}
+
+/* アバウトページ:　画像と沿革 */
+.history {
+    background-color: #5D9AB2;
+    background-color: var(--main-color);
+    color: #fff;
+    color: var(--text-bright-color);
+}
+
+.history .text {
+    padding: 20px;
+}
+
+.history h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.history .photo {
+    min-height: 300px;
+    background-image: url(img/plant.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.history table {
+    border-collapse: collapse;
+    border-top: solid 1px #ddd;
+    border-top: solid 1px var(--gray-color);
+    font-size: 0.875rem;
+}
+
+.history th,
+.history td {
+    padding-top: 1.8rem;
+    padding-bottom: solid 1px #ddd;
+    padding-bottom: solid 1px var(--gray-color);
+}
+
+.history th {
+    padding-right: 1rem;
+    text-align: left;
+    word-break: keep-all;
+}
+
+@media (min-width: 768px) {
+    .history .container {
+        display: flex;
+        max-width: 1000px;
+        max-width: var(--large-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .history .photo {
+        flex: 3;
+    }
+
+    .history .text {
+        flex: 2;
+        padding: 50px;
     }
 }
